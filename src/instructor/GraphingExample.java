@@ -17,7 +17,8 @@ public class GraphingExample extends Application {
       Line line = new Line (10, 50, 150, 200);
 
       Rectangle rect = new Rectangle (50, 50, 50, 50);
-      rect.setStroke(Color.RED);
+      String red = "RED";
+      rect.setStroke(Color.red);
       rect.setStrokeWidth(2);
       rect.setFill(null);
 

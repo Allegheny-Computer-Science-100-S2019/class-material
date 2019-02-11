@@ -23,8 +23,10 @@ public class Conversion {
     int result = age * 365 * 24;
     System.out.println("Your age in hours is: " + result);
 
-
-
+    // Get user's color preference
+    System.out.println("Enter a color of your choice");
+    String userColor = userInput.next();
+    System.out.println("You entered: " + userColor);
 
 
   }
