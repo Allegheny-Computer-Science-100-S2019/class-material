@@ -29,12 +29,15 @@ public class StringExample {
     // compile and run the program, and observe the behavior of the methods
 
     // Now we apply String class's charAt method and print it
-    //* System.out.println("The second character is: " + text.charAt(1));
+    System.out.println("The second character is: " + text.charAt(1));
 
     // Now apply other String class's methods and print the results
     // toUpperCase, indexOf, replace
-    //* System.out.println("Index is: " + text.indexOf('a'));
-    //* System.out.println("New string after replace is: " + text.replace('a','A'));
-    //* System.out.println("New string in upper case: " + text.toUpperCase());
+    System.out.println("Index is: " + text.indexOf('a'));
+    System.out.println("New string after replace is: " + text.replace('a','A'));
+    System.out.println("New string in upper case: " + text.toUpperCase());
+    System.out.println("New substring: " + text.substring(3, 6));
+    System.out.println("Length: " + text.length());
+    System.out.println("Equals: " + text.equals("snowy day"));
   }
 }
