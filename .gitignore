@@ -19,7 +19,6 @@ local.properties
 *.dmg
 *.gz
 *.iso
-*.jar
 *.rar
 *.tar
 *.zip
@@ -129,7 +128,6 @@ Session.vim
 # Java #
 ######################
 *.ear
-*.jar
 *.war
 *.ant_targets
 
