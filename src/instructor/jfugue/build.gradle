@@ -1,0 +1,45 @@
+plugins {
+  id "org.gatored.gatorgradle" version "0.3.1"
+  id "java"
+}
+
+// declare the repositories that are used to meet dependencies
+repositories {
+  mavenLocal()
+  jcenter()
+  mavenCentral()
+}
+
+// specify relative path for a local jar dependency
+dependencies {
+  compile files('libs/jfugue-5.0.9.jar')
+}
+
+// specify the use of gradle version 5.1
+wrapper {
+  gradleVersion = '5.1'
+}
+
+// declare values to place in the manifest file in the JAR
+jar {
+  manifest {
+    attributes(
+        'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+        'Main-Class': 'labsix.MusicGenerator'
+        )
+  }
+}
+
+// give the name of the application to run with "gradle run" command
+apply plugin: 'application'
+mainClassName = 'example.MusicGenerator'
+
+// perform checkstyle checking with the "gradle check" command
+//apply plugin: 'checkstyle'
+//checkstyle.toolVersion = '8.1'
+//checkstyle {
+//  ignoreFailures = false
+//    maxWarnings = 0
+//    maxErrors = 0
+//    configFile = new File(rootDir, "config/checkstyle/google_checks.xml")
+//}
