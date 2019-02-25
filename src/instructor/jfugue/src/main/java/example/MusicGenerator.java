@@ -26,6 +26,11 @@ public class MusicGenerator {
     String instrument = scanner.next();
     String tempo = scanner.next();
 
+    // if statement that map "p" to piano
+    if(instrument.equals("p")) {
+      instrument = "piano";
+    }
+    
     String choice = "I[" + instrument + "] T[" + tempo + "]";
 
     // TODO: create your own music strings
