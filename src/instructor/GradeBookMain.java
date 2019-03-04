@@ -12,6 +12,6 @@ public class GradeBookMain {
     GradeBook myGradeBook  = new GradeBook ();
 
     // call the displayMessage method
-    myGradeBook.displayMessage();
+    myGradeBook.displayMessage("CMPSC 100");
   }
 }

@@ -9,7 +9,7 @@ public class GradeBook {
 
   /** method to display a welcome message.
   */
-  public void displayMessage() {
-    System.out.println("Welcome to the Grade Book!");
+  public void displayMessage(String name) {
+    System.out.println("Welcome to " + name);
   }
 }
