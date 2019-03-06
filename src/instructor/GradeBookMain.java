@@ -9,9 +9,14 @@ public class GradeBookMain {
   public static void main (String args[]) {
 
 	   // call the constructor
-    GradeBook myGradeBook  = new GradeBook ();
+    // GradeBook myGradeBook  = new GradeBook ();
 
     // call the displayMessage method
-    myGradeBook.displayMessage("CMPSC 100");
+    // myGradeBook.displayMessage("CMPSC 100");
+
+    // call the contructor with parameter
+    GradeBook csGradeBook = new GradeBook ("CS 300");
+    csGradeBook.setCourseName("CS 200");
+    System.out.println(csGradeBook.getCourseName());
   }
 }
