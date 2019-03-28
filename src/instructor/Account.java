@@ -10,7 +10,7 @@ public class Account {
   public Account (int acc) {
     accNo = acc;
     balance = 0;
-    Person = null;
+    person = null;
   }
   /** Constructor with account number
   * and a balance.
@@ -18,7 +18,7 @@ public class Account {
   public Account (int acc, double bal) {
     accNo = acc;
     balance = bal;
-    Person = null;
+    person = null;
   }
   /** Constructor with account number
   * and a balance and a Person.
@@ -26,7 +26,7 @@ public class Account {
   public Account (int acc, double bal, Person per) {
     accNo = acc;
     balance = bal;
-    Person = per;
+    person = per;
   }
   public double getBalance() {
     return balance;
