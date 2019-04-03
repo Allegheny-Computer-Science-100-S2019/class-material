@@ -28,6 +28,22 @@ public class CrimeAnalyzer {
 	*/
 	public void findDistricts(ArrayList<String> list) {
 		//TODO: implement functionality
+		count = list.size();
+
+		Iterator iterator = list.iterator();
+
+		while(iterator.hasNext()) {
+			String line = (String) iterator.next();
+			Scanner lineScanner = new Scanner(line);
+			lineScanner.useDelimiter(",");
+			String district;
+			lineScanner.next();
+			lineScanner.next();
+			district = lineScanner.next();
+			if(!districtList.contains(district)) {
+				districtList.add(district);
+			}
+		}
 	}
 
 	/** Method to return the number of analyzed items.

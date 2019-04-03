@@ -41,8 +41,21 @@ public class CrimeFileReader {
 	*/
 	public ArrayList<String> find (String word) {
 		// TODO: implement the functionality
+		Iterator<String> listIterator = list.iterator();
+		ArrayList<String> searchList = new ArrayList<String>();
+
+		while(listIterator.hasNext()) {
+			String row = listIterator.next();
+			if(row.contains(word)) {
+				searchList.add(row);
+			}
+		}
+
+		return searchList;
 	}
 
+	/** Method to return a list that matches search word.
+	*/
 	public ArrayList<String> getSearchList() {
 		return list;
 	}
