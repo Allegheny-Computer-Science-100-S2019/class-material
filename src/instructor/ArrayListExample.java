@@ -23,6 +23,26 @@ public class ArrayListExample {
       System.out.println("Unable to locate file");
     }
 
+    // create an instance of an ArrayList
+    ArrayList<String> wordList = new ArrayList<String>();
 
+    while(input.hasNext()) {
+      String word = input.next();
+      wordList.add(word);
+    }
+    System.out.println(wordList.size());
+
+    int count = 0;
+    int count1 = 0;
+    while(count < wordList.size()) {
+      //System.out.println("Inside the while loop");
+      String word = wordList.get(count);
+      if(word.equals("addiction")) {
+        System.out.println(word);
+        count1++;
+      }
+      count++;
+    }
+    System.out.println("count " + count1);
   }
 }
