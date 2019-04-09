@@ -5,7 +5,7 @@ You will have 20 minutes to complete the quiz.
 The quiz is closed book, closed notes, but a one page note
 sheet (front and back) is allowed.
 
-As you prepare for the first quiz please make sure you understand
+As you prepare for the second quiz please make sure you understand
 what each of the following terms means and be able to identify an example of each:
 
 * Java API
