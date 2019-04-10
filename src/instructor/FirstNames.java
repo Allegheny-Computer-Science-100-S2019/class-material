@@ -20,9 +20,17 @@ public class FirstNames {
     Arrays.sort(names);
     // print an array
     index = 0;
-    while(index < names.length) {
+    do {
       System.out.println(names[index]);
       index++;
+    } while(index < names.length);
+
+    // select certain letters
+    for(index = 0; index < names.length; index++) {
+      if(names[index].startsWith("A")) {
+        System.out.println("-----");
+        System.out.println(names[index]);
+      }
     }
   }
 }
