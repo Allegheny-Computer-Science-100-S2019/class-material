@@ -1,25 +1,41 @@
 package loops;
 
-import java.awt.Color;
-import java.awt.Graphics;
+import javafx.application.Application;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
+import javafx.scene.shape.Ellipse;
+import javafx.scene.shape.Rectangle;
+import javafx.stage.Stage;
+
 import java.util.Random;
-import javax.swing.JApplet;
 
 /**
- * This class produces random graphical output.
- *
- * <p>Bugs: This program has no known bugs.
- *
- * @author Janyl Jumadinova
- */
+* This class produces random graphical output.
+*
+* <p>Bugs: This program has no known bugs.
+*
+* @author Janyl Jumadinova
+*/
 
-public class PaintScene extends JApplet {
+public class PaintScene {
+
+  private Stage stage;
+  private Group root;
+
+  /** Constructor to initialize the stage.
+  */
+  public PaintScene(Stage mainStage) {
+    stage = mainStage;
+    root = new Group();
+  }
 
   /**
-   * This pain method will draw the graphics on the screen.
-   *
+  * This pain method will draw the graphics on the screen.
+  *
   */
-  public void paint(Graphics page) {
+  public void paint() {
     // variable declarations:
     int total = 10;
     int xpoint = 10;
@@ -28,30 +44,49 @@ public class PaintScene extends JApplet {
     // create an instance of a Random class
     Random rand = new Random();
 
-    // 1. Set the color
-    page.setColor(Color.red);
-    // 2. Create total # of randomly created circles
+    // 1. Create total # of randomly created ovals
     int count = 0;
     while (count < total) {
-      page.fillOval(xpoint, ypoint, size, size * 2);
+      Ellipse oval = new Ellipse(xpoint, ypoint, size, size * 2);
       xpoint += rand.nextInt(50);
       ypoint += rand.nextInt(50);
+      // 2. Set the color
+      oval.setFill(Color.RED);
+      root.getChildren().add(oval);
       count ++;
     }
 
-    // TO DO: 1) Set a different Color
+    // TODO: 2. Create a total # of randomly created squares, use do while loop
+    xpoint = 10;
+    ypoint = 10;
+    count = 0;
 
-    // TO DO: 2) Create a total # of randomly created squares, use do while loop
-    // 2.1) Reset x and y starting location
-    // 2.2) Reset the count
-    // 2.3) Use fillRect method
+    do {
+      Rectangle rect = new Rectangle(xpoint, ypoint, size, size);
+      xpoint += rand.nextInt(50);
+      ypoint += rand.nextInt(50);
+      // Set the color
+      rect.setFill(Color.GREEN);
+      root.getChildren().add(rect);
+      count ++;
+    }
+    while (count < total);
 
-    // TO DO: 3) Set a different Color
+    // TO DO: 3) Create a total # of randomly created circles, use a for loop
+    xpoint = 10;
+    ypoint = 10;
+    for (int i = 0; i < total; i++) {
+      Circle circle = new Circle(xpoint, ypoint, size);
+      xpoint += rand.nextInt(50);
+      ypoint += rand.nextInt(50);
+      // Set the color
+      circle.setFill(Color.BLUE);
+      root.getChildren().add(circle);
+    }
 
-    // TO DO: 4) Create a total # of randomly created circles, use a for loop
-    // 4.1) Reset x and y starting location
-    // 4.2) Reset the count
-    // 4.3) Use fillOval method
-
+    Scene scene = new Scene(root, 600, 400);
+    stage.setTitle("Shapes");
+    stage.setScene(scene);
+    stage.show();
   }
 }

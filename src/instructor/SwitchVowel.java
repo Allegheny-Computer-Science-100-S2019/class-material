@@ -13,15 +13,15 @@ public class SwitchVowel {
     char character ;
     character = input.next().charAt(0);
     switch ( character ) {
-      case 'a': 	// case labels
-      case 'e': 	// separated by :
-      case 'i': 	// character
-      case 'o': 	// notice use of ' '
-      case 'u': 	// marks for char tests
-        System.out.println (character + " is a lowercase vowel");
+      case 'a': case 'A':	// case labels
+      case 'e': case 'E':	// separated by :
+      case 'i': case 'I':	// character
+      case 'o': case 'O':	// notice use of ' '
+      case 'u': case 'U':	// marks for char tests
+        System.out.println (character + " is a  vowel");
         break;
       default:
-        System.out.println (character + " is not a lowercase vowel");
+        System.out.println (character + " is not a  vowel");
     }
   }
 }
