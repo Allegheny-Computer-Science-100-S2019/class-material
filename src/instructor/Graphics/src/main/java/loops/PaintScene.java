@@ -23,6 +23,7 @@ public class PaintScene {
 
   private Stage stage;
   private Group root;
+  private Color[] colorList = {Color.RED, Color.BLUE, Color.CYAN, Color.WHITE, Color.YELLOW, Color.LIME, Color.GREEN, Color.BLACK, Color.BEIGE, Color.CORAL};
 
   /** Constructor to initialize the stage.
   */
@@ -32,16 +33,16 @@ public class PaintScene {
   }
 
   /**
-  * This pain method will draw the graphics on the screen.
+  * This paint method will draw the graphics on the screen.
   *
   */
   public void paint() {
     // variable declarations:
     int total = 10;
-    int xpoint = 10;
-    int ypoint = 10;
+    int xpoint = 300;
+    int ypoint = 300;
     int size = 30;
-    // create an instance of a Random class
+    // create an instanColor.REDce of a Random class
     Random rand = new Random();
 
     // 1. Create total # of randomly created ovals
@@ -51,7 +52,7 @@ public class PaintScene {
       xpoint += rand.nextInt(50);
       ypoint += rand.nextInt(50);
       // 2. Set the color
-      oval.setFill(Color.RED);
+      oval.setFill(colorList[count]);
       root.getChildren().add(oval);
       count ++;
     }
@@ -85,8 +86,16 @@ public class PaintScene {
     }
 
     Scene scene = new Scene(root, 600, 400);
+
+    scene.setOnMouseClicked(this::processMouseClick);
     stage.setTitle("Shapes");
     stage.setScene(scene);
     stage.show();
+  }
+
+  public void processMouseClick(MouseEvent event) {
+    Text text = new Text (20, 30, "Clicked!");
+    text.setFill(Color.YELLOW);
+    root.getChildren().add(text);
   }
 }
